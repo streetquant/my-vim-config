@@ -1,88 +1,39 @@
-" General
 if has('clipboard')
   set clipboard=unnamedplus,unnamed
 else
   set clipboard=
 endif
-set incsearch nohlsearch
-set isfname-==
-set nottybuiltin
-set shortmess=acTOI
-set showcmd
-set sidescroll=4
-set splitbelow
-set switchbuf=useopen
-set t_Co=256
-set ttyfast
-set belloff=all
-set updatetime=1000
-set viminfo+=!
-set mouse=a
-set maxmempattern=2000000
 
-" Editing
-set complete=.,w,b,k
-set completeopt=menuone,noinsert
-set formatoptions=croqn
-set nojoinspaces
-
-" View formatting
+set encoding=utf-8
+set fileformats=unix,dos
 set number
 set ruler
-set diffopt+=vertical,iwhite,algorithm:patience,indent-heuristic
-set guioptions=crb
-set guifont=Fantasque\ Sans\ Mono\ 11
-set linebreak showbreak=+
-set listchars=eol:.,tab:\|-
-set laststatus=2
-set cursorlineopt=number,screenline
+set mouse=a
+set showcmd
+set incsearch
+set nohlsearch
 
-if has('win32') || has('win64') || has('osx')
-  set fillchars=stl:-,stlnc:-,vert:\|,fold:\ ,diff:-
-else
-  set fillchars=stl:-,stlnc:-,vert:\│,fold:\ ,diff:-
-endif
+set autoread
+set hidden
+set nobackup
+set nowritebackup
+set noswapfile
 
-set statusline=
-set statusline+=%<%f\ %h%m%r             " filename and flags
-set statusline+=%=                       " alignment separator
-set statusline+=[%{&ft}]                 " filetype
-set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
-
-" Files
-set autoread autowrite
-set encoding=utf-8
-set ffs=unix
-set nobackup nowritebackup noswapfile
 if has('persistent_undo')
   set undodir=~/.vimundo
   set undofile
 endif
 
-" Indentation
 set backspace=indent,eol,start
 set autoindent
-set expandtab smarttab
-set tabstop=8 softtabstop=2
-set shiftwidth=2 shiftround
-set cinoptions+=:0
+set expandtab
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
-" Command-line
-set cmdheight=1
-set wildmenu
-set wildmode=list:longest,full
+set splitbelow
+set splitright
 
-" Timeouts
-set notimeout
-set ttimeout
-set ttimeoutlen=200
-
-" Cscope
-set cscopetagorder=1 " Look in tags file first
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-set nocscopetag
-
-let mapleader="_"
-let maplocalleader=","
-
-let apache_version = "2.2"
+let mapleader = " "
+let maplocalleader = ","

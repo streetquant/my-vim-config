@@ -1,7 +1,10 @@
-# Ignore all tags files, just remember to rebuild them every once in a while:
+# Vim history/session artifacts
+.netrwhist
+.viminfo
+.vim_mru_files
+.vimundo/
+
+# Generated tags
 tags
 doc/tags
 doc/tags-*
-spell/*.spl
-
-.netrwhist

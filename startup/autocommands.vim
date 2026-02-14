@@ -1,4 +1,4 @@
-augroup custom
+augroup vim_minimal_autocmds
   autocmd!
 
   " Remove trailing whitespace on save.
@@ -17,8 +17,6 @@ augroup custom
   autocmd FocusGained * checktime
   autocmd WinEnter    * checktime
 
-  " Keep manual pages unfolded by default.
-  autocmd FileType man setlocal foldmethod=indent
 augroup END
 
 function! s:CleanWhitespace()

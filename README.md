@@ -1,60 +1,49 @@
 # my-vim-config
 
-Minimal Vim configuration for basic editing and navigation.
+Minimal Vim configuration for basic text editing.
 
-This repo is intentionally lightweight:
+This repo contains only core config files:
 - no plugin manager
-- no external plugin bundles/submodules
-- fast startup and predictable behavior
+- no bundled plugins
+- no CI/CD files
 
-## Active behavior
+## Behavior
 
-### Core editor settings
-- syntax highlighting and filetype detection enabled
-- line numbers, ruler, statusline
+### Core settings
+- filetype, indent, and syntax enabled
 - UTF-8 encoding
-- 2-space indentation defaults
-- persistent undo (if supported by your Vim)
+- line numbers and ruler
 - mouse enabled
+- 2-space indentation defaults
+- persistent undo when supported
 
 ### Autocommands
-- trims trailing whitespace on save
-- restores last cursor position when reopening files
-- runs `checktime` on focus/window enter
+- trim trailing whitespace on save
+- restore last cursor position on reopen
+- run `checktime` on focus/window enter
 
 ### Navigation mappings
-- `j` / `k`: move by display lines (`gj` / `gk`)
+- `j` / `k`: move by display line (`gj` / `gk`)
 - `J` / `K`: move 5 display lines
 - `gh` / `gj` / `gk` / `gl`: move between split windows
 - `<C-h>` / `<C-l>`: previous/next tab
 - `<Left>` / `<Right>`: resize current split
-- `<S-Left>` / `<S-Right>` / `<S-Up>` / `<S-Down>`: start/extend selection
 
 ### Clipboard behavior
-- every yank is synced to system clipboard
-- works with native clipboard support, or fallback tools:
-  - `wl-copy`
-  - `xclip`
-  - `xsel`
-  - `pbcopy`
-  - `clip` / `clip.exe`
-- mouse drag release in visual mode yanks selection
-
-### Compatibility commands
-Some ftplugins expect these commands, so minimal compatibility definitions are kept:
-- `:RunCommand`
-- `:ConsoleCommand`
+- every yank is synced to the system clipboard
+- fallback clipboard tools: `wl-copy`, `xclip`, `xsel`, `pbcopy`, `clip`, `clip.exe`
+- mouse visual selection is copied on left-button release
 
 ## Install
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/my-vim-config.git ~/.vim
+git clone https://github.com/streetquant/my-vim-config.git ~/.vim
 printf 'source ~/.vim/.vimrc\n' > ~/.vimrc
 ```
 
-## Files that matter
+## Files
 - `.vimrc`
+- `.gitignore`
 - `startup/settings.vim`
-- `startup/mappings.vim`
 - `startup/autocommands.vim`
-- `startup/commands.vim`
+- `startup/mappings.vim`

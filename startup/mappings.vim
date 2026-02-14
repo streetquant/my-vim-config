@@ -1,8 +1,5 @@
-" Navigation-only mappings.
 nnoremap s <Nop>
 nnoremap Q <Nop>
-silent! xunmap jc
-silent! vunmap jc
 
 " Move through display lines.
 nnoremap <silent> j gj
@@ -27,18 +24,8 @@ nnoremap gk <C-w>k
 nnoremap gl <C-w>l
 
 " Resize split windows.
-nnoremap <left>  <C-w><
-nnoremap <right> <C-w>>
-
-" Start and extend selection with Shift + arrow keys.
-nnoremap <S-Left>  v<Left>
-nnoremap <S-Right> v<Right>
-nnoremap <S-Up>    v<Up>
-nnoremap <S-Down>  v<Down>
-xnoremap <S-Left>  <Left>
-xnoremap <S-Right> <Right>
-xnoremap <S-Up>    <Up>
-xnoremap <S-Down>  <Down>
+nnoremap <Left>  <C-w><
+nnoremap <Right> <C-w>>
 
 function! s:ClipboardCommand() abort
   if executable('wl-copy')
@@ -83,8 +70,5 @@ augroup clipboard_sync
   autocmd TextYankPost * if v:event.operator ==# 'y' | call <SID>CopyRegisterToClipboard(v:event.regname) | endif
 augroup END
 
-" Prevent accidental deletes in visual selection: use `c` to copy.
-xnoremap <silent> c y
-
-" Mouse drag select and copy on release.
+" Mouse drag-select and copy on release.
 xnoremap <silent> <LeftRelease> y
