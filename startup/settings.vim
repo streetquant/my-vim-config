@@ -35,5 +35,21 @@ set shiftwidth=2
 set splitbelow
 set splitright
 
+function! VimrcSearchCount() abort
+  if !exists('*searchcount') || empty(@/)
+    return ''
+  endif
+
+  let l:result = searchcount({'recompute': 1, 'maxcount': 9999, 'timeout': 50})
+  if empty(l:result) || get(l:result, 'total', 0) == 0
+    return ''
+  endif
+
+  return printf('[%d/%d] ', l:result.current, l:result.total)
+endfunction
+
+set laststatus=2
+set statusline=%f%m%r%h%w\ %=%{VimrcSearchCount()}%l:%c
+
 let mapleader = " "
 let maplocalleader = ","
