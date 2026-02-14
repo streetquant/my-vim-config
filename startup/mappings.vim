@@ -70,5 +70,8 @@ augroup clipboard_sync
   autocmd TextYankPost * if v:event.operator ==# 'y' | call <SID>CopyRegisterToClipboard(v:event.regname) | endif
 augroup END
 
+" In visual mode, use `c` as copy to avoid accidental deletes.
+xnoremap <silent> c y
+
 " Mouse drag-select and copy on release.
 xnoremap <silent> <LeftRelease> y
